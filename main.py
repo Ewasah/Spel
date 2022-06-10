@@ -25,7 +25,7 @@ while active:
 
   lucifers -= a
   if lucifers <= 0:
-    print("Je hebt verloren :(!")
+    print(f"Je hebt verloren {naam} :(!")
     active = False
     continue
     
@@ -34,12 +34,13 @@ while active:
   print(f"De computer pakt {b} lucifer(s)")  
 
   if lucifers <= 0:
-    print("Je hebt gewonnen :)!")
+    print(f"Je hebt gewonnen {naam} :)!")
     active = False
     continue
 
     # spel afgelopen    
     active = False    
+
 
 print()
 
