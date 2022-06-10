@@ -15,35 +15,32 @@ lucifers = random.randint(20, 25)
 print()
 
 while active:
-  a = int(input("Hoeveel lucifers wil je trekken? "))
-  if a in r:
-    print(lucifers)
-    print(a)
-    lucifers -= a
-    print(lucifers)
+  print(f"Er zijn nog {lucifers} lucifers")  
+  a = int(input("Hoeveel lucifers wil je trekken? "))    
   
-    if lucifers <= 0:
-      print("verloren")
-      gewonnen = False
-      active = False
-    if lucifers > 0:
-      b = random.randint(1, 3)
-      print(lucifers)
-      print(b)
-      lucifers -= b
-      print(lucifers)
-    if lucifers <= 0:
-      print("gewonnen")
-      gewonnen = True
-      active = False
-  else:
+  # check ofinput tussen 1 en 3 is
+  if a < 1 or a > 3:
     print("Je mag maximaal 3 lucifers trekken!")
+    continue  
 
+  lucifers -= a
+  if lucifers <= 0:
+    print("Je hebt verloren :(!")
+    active = False
+    continue
+    
+  b = random.randint(1, 3)
+  lucifers -= b
+  print(f"De computer pakt {b} lucifer(s)")  
 
-if gewonnen:
-  print("YEEEEEH GEWONNEN")
-if not gewonnen:
-  print("Je hebt verloren!")
-  
-  
+  if lucifers <= 0:
+    print("Je hebt gewonnen :)!")
+    active = False
+    continue
+
+    # spel afgelopen    
+    active = False    
+
+print()
+
    
